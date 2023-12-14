@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private TMPro.TextMeshProUGUI gameOverText;
 
 	[SerializeField] private GameObject gameOverPanel;
+	[SerializeField] private GameObject pausePanel;
 
 	[SerializeField] private float timer = 60f;
 
@@ -47,7 +48,19 @@ public class GameManager : MonoBehaviour
 
 	public void OnEscape ()
 	{
-		// TO DO : Pause
+		Time.timeScale = 0;
+		pausePanel.SetActive(true);
+	}
+
+	public void OnResume ()
+	{
+		pausePanel.SetActive(false);
+		Time.timeScale = 1;
+	}
+
+	public void OnMainMenu ()
+	{
+		SceneManager.LoadScene("MainMenu");
 	}
 
 	public void AddScore (int score)
