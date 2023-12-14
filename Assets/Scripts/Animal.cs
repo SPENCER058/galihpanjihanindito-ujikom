@@ -4,8 +4,9 @@ public class Animal : MonoBehaviour
 {
 
 	[SerializeField] private float health = 100f;
+	[SerializeField] private int score = 0;
 
-	public System.Action OnEnemyDie;
+	public System.Action<int> OnEnemyDie;
 
 	private void OnTriggerEnter (Collider other)
 	{
@@ -16,7 +17,7 @@ public class Animal : MonoBehaviour
 			if (health <= 0)
 			{
 				Destroy(this.gameObject);
-				OnEnemyDie?.Invoke();
+				OnEnemyDie?.Invoke(score);
 			}
 		}
 

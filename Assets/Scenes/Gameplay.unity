@@ -953,7 +953,7 @@ Transform:
   m_GameObject: {fileID: 1017269126}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 25}
+  m_LocalPosition: {x: 0, y: 0, z: 15.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -973,7 +973,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1374282705}
   interval: 2
-  EnemyPrefab: {fileID: 908456801926388533, guid: c3e15ea39f854a842959e1d1b0cfeec7, type: 3}
+  enemyList:
+  - {fileID: 6305464563701234896, guid: a6e044d339814354eb1f2e9bf7b19744, type: 3}
+  - {fileID: 908456801926388533, guid: c3e15ea39f854a842959e1d1b0cfeec7, type: 3}
+  - {fileID: 150466523452793727, guid: 13813aa23e32cbc4d9346f77410ed20e, type: 3}
+  - {fileID: 30369751622353441, guid: 3a381723ebc238340a110e0fcbe3fce0, type: 3}
 --- !u!1 &1082232262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,7 +1609,7 @@ MonoBehaviour:
   timerText: {fileID: 1219226755}
   gameOverText: {fileID: 84988274}
   gameOverPanel: {fileID: 1443670389}
-  timer: 10
+  timer: 60
   score: 0
 --- !u!1 &1443670389
 GameObject:

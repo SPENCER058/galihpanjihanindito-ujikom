@@ -50,10 +50,10 @@ public class GameManager : MonoBehaviour
 		// TO DO : Pause
 	}
 
-	public void AddScore ()
+	public void AddScore (int score)
 	{
-		score++;
-		scoreText.text = $"Score = {score}";
+		this.score += score;
+		scoreText.text = $"Score = {this.score}";
 	}
 
 }

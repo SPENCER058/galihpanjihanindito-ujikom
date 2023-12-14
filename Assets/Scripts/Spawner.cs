@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -5,7 +6,7 @@ public class Spawner : MonoBehaviour
 	[SerializeField] private GameManager gameManager;
 	[SerializeField] private float interval = 2f;
 
-	[SerializeField] private GameObject EnemyPrefab;
+	[SerializeField] private List<GameObject> enemyList = new List<GameObject>();
 
 	private float currentInterval;
 
@@ -22,22 +23,30 @@ public class Spawner : MonoBehaviour
 		{
 			currentInterval = interval;
 
-			NewEnemy();
+			GachaEnemy();
 		}
 	}
 
-	private void NewEnemy ()
+	private void GachaEnemy () {
+
+		int gacha = Random.Range(0, 3);
+
+		NewEnemy(enemyList[gacha]);
+
+	}
+
+	private void NewEnemy (GameObject gacha)
 	{
-		GameObject temp =  Instantiate(EnemyPrefab, this.gameObject.transform);
+		GameObject temp =  Instantiate(gacha, this.gameObject.transform);
 		Animal tempAnimal = temp.GetComponent<Animal>();
 
 		tempAnimal.OnEnemyDie += OnEnemyDie;
 		
 	}
 
-	private void OnEnemyDie ()
+	private void OnEnemyDie (int score)
 	{
-		gameManager.AddScore();
+		gameManager.AddScore(score);
 	}
 
 }
