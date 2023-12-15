@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1881360896107274943}
   - component: {fileID: 6899267281587222438}
   - component: {fileID: 680561477555219337}
-  - component: {fileID: -5715088466030862258}
+  - component: {fileID: 2541448943283917210}
   m_Layer: 0
   m_Name: Food
   m_TagString: Food
@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5035980199824583256}
   m_Father: {fileID: 0}
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ffaebcd351bf249b4b104cb86f7009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hungerValue: 25
   lifeTime: 3
 --- !u!114 &680561477555219337
 MonoBehaviour:
@@ -60,9 +62,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca5bd86ece02e945b74b2a7ff52d339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
---- !u!65 &-5715088466030862258
-BoxCollider:
+  moveSpeed: 6
+--- !u!64 &2541448943283917210
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -76,12 +78,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 0169642a95e8fce49b967cc4543bcdd8, type: 3}
 --- !u!1001 &5035980199824978136
 PrefabInstance:
   m_ObjectHideFlags: 0

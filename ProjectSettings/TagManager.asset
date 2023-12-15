@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Food
-  - EnemyLimit
+  - Animal
+  - Animal Destroy
   layers:
   - Default
   - TransparentFX
